@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+  <script type="text/javascript">
+    function onclick_callback ()
+    {
+      alert ("Hello world");
+    }
+    function mouseevent_callback(event)
+    {
+      /* IE compatibility */
+      if (!event) event = window.event;
+      
+      /* obtain event type and target */
+      var eType = event.type;
+      var eTarget = event.target || event.srcElement;
+      alert(eType +' event on element with id: '+ eTarget.id);
+    }
+
+    function onload ()
+    {
+      /* obtain a ref to the 'body' element of the page */
+      var body = document.body;
+      /* create a span element to be clicked */
+      var span = document.createElement('span');
+      span.id = 'ExampleSpan';
+      span.appendChild(document.createTextNode ('Click Here!'));
+
+      /* register the span object to receive specific mouse events */
+      span.onmousedown = mouseevent_callback;
+      span.onmouseup = mouseevent_callback;
+      span.onmouseover = mouseevent_callback;
+      span.onmouseout = mouseevent_callback;
+
+      /* display the span on the page */
+      body.appendChild(span);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
