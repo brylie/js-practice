@@ -1,7 +1,17 @@
 <!DOCTYPE html>
   <head>
+    <script type="text/javascript">
+        function onkeypress_callback(evt)
+        {
+            var eType = evt.type; // Will return "keypress"
+            var eCode = 'keyCode is ' + evt.keyCode;
+            var eChar = 'charCode is ' + evt.charCode;
+
+            alert("Captured Event (type=" + eType + ", key Unicode value=" + eCode + ", ASCII value=" + eChar + ")");
+        }
+    </script>
   </head>
   <body>
-    <input type="text" onkeypress="alert('Hello world!');"></input>
+    <input type="text" onkeypress="onkeypress_callback(event)"></input>
   </body>
 </html>
