@@ -2,11 +2,9 @@
 var grand_total = 0;
 for (var i=0;i<1000;i++) {
   if(i % 3 ==0) {
-    document.write(i + " /3" + "<br />");
     grand_total += i;
   } else if (i % 5 ==0) {
-    document.write(i + " /5" + "<br />");
     grand_total += i;
   };
 };
-document.write("Total: " + grand_total);
+alert("Total: " + grand_total);
